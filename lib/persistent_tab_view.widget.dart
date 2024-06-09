@@ -84,6 +84,8 @@ class PersistentTabView extends PersistentTabViewBase {
     this.context, {
     required final Widget customWidget,
     required final int itemCount,
+    required int navBarHeight,
+    required Function(int index),
     required this.screens,
     final Key? key,
     this.controller,
