@@ -10,13 +10,13 @@ part of persistent_bottom_nav_bar;
 ///To learn more, check out the [Readme](https://github.com/BilalShahid13/PersistentBottomNavBar).
 
 class PersistentTabView extends PersistentTabViewBase {
-  PersistentTabView(this.context,
+  PersistentTabView(this.context, this.onItemTapped,
       {required this.screens,
       final Key? key,
       final List<PersistentBottomNavBarItem>? items,
       this.controller,
       final double navBarHeight = kBottomNavigationBarHeight,
-      final void Function(int index)? onItemTapped,
+      // final void Function(int index)? onItemTapped,
       this.margin = EdgeInsets.zero,
       this.backgroundColor = CupertinoColors.white,
       final ValueChanged<int>? onItemSelected,
@@ -87,10 +87,10 @@ class PersistentTabView extends PersistentTabViewBase {
     required final Widget customWidget,
     required final int itemCount,
     required final double navBarHeight,
+    required this.onItemTapped,
     required this.screens,
     final Key? key,
     this.controller,
-    final Function(int index)? onItemTapped,
     this.margin = EdgeInsets.zero,
     this.floatingActionButton,
     this.resizeToAvoidBottomInset = false,
@@ -150,6 +150,9 @@ class PersistentTabView extends PersistentTabViewBase {
   ///A custom widget which is displayed at the bottom right of the display at all times.
   @override
   final Widget? floatingActionButton;
+
+  @override
+  final Function(int index) onItemTapped;
 
   ///Specifies the navBarHeight
   ///
