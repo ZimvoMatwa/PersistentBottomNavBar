@@ -16,6 +16,7 @@ class PersistentTabView extends PersistentTabViewBase {
       final List<PersistentBottomNavBarItem>? items,
       this.controller,
       final double navBarHeight = kBottomNavigationBarHeight,
+      final void Function(int index)? onItemTapped,
       this.margin = EdgeInsets.zero,
       this.backgroundColor = CupertinoColors.white,
       final ValueChanged<int>? onItemSelected,
@@ -65,6 +66,7 @@ class PersistentTabView extends PersistentTabViewBase {
           popAllScreensOnTapOfSelectedTab: popAllScreensOnTapOfSelectedTab,
           popAllScreensOnTapAnyTabs: popAllScreensOnTapAnyTabs,
           navBarHeight: navBarHeight,
+          onItemTapped: onItemTapped,
           backgroundColor: backgroundColor,
           onItemSelected: onItemSelected,
           neumorphicProperties: neumorphicProperties,
@@ -228,6 +230,7 @@ class PersistentTabViewBase extends StatefulWidget {
     this.navBarStyle,
     this.neumorphicProperties,
     this.navBarHeight,
+    this.onItemTapped,
     this.customWidget,
     this.itemCount,
     this.popAllScreensOnTapOfSelectedTab,
@@ -279,6 +282,9 @@ class PersistentTabViewBase extends StatefulWidget {
   ///
   ///Defaults to `kBottomNavigationBarHeight` which is `56.0`.
   final double? navBarHeight;
+
+  /// buns
+  final void Function(int index)? onItemTapped;
 
   ///The margin around the navigation bar.
   final EdgeInsets? margin;
