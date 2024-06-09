@@ -85,7 +85,7 @@ class PersistentTabView extends PersistentTabViewBase {
     required final Widget customWidget,
     required final int itemCount,
     required int navBarHeight,
-    required Function(int index) onItemTapped,
+    required void Function(int index) onItemTapped,
     required this.screens,
     final Key? key,
     this.controller,
